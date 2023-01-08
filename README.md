@@ -1,4 +1,4 @@
-# WebScraper
+# CFC-Underwriting WebScraper
 WebScraper is a Python script that scrapes a webpage and extracts a list of externally loaded resources and produces a case-insensitive word frequency count from the visible text on the webpage.
 
 ## Setup
