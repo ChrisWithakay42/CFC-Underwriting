@@ -30,11 +30,11 @@ class WebScraper:
 
     def scrape(self):
         try:
-            r = requests.get(self.url)
-            r.raise_for_status()
-            self.soup = BeautifulSoup(r.text, "html.parser")
-        except RequestException as e:
-            logging.error(e)
+            req = requests.get(self.url)
+            req.raise_for_status()
+            self.soup = BeautifulSoup(req.text, "html.parser")
+        except RequestException as error:
+            logging.error(error)
 
     def get_resources(self):
         resources = []
@@ -48,11 +48,10 @@ class WebScraper:
         return resources
 
     def get_privacy_policy_url(self):
-        for a in self.soup.find_all("a"):
-            href = a.get("href")
-            if href and "privacy policy" in a.text.lower():
+        for a_tag in self.soup.find_all("a"):
+            href = a_tag.get("href")
+            if href and "privacy policy" in a_tag.text.lower():
                 return urljoin(self.url, href)
-        return
 
     def get_word_count(self):
         text = self.soup.get_text()
@@ -69,7 +68,8 @@ class Scraper:
 
         Attributes:
             index_url (str): The URL of the index webpage.
-            resources_path (str): The file path for the JSON output file containing the list of externally loaded resources.
+            resources_path (str): The file path for the JSON output file containing the list of externally loaded
+            resources.
             word_count_path (str): The file path for the JSON output file containing the word frequency count.
 
         Methods:
@@ -88,16 +88,16 @@ class Scraper:
         scraper.scrape()
 
         resources = scraper.get_resources()
-        with open(self.resources_path, "w") as f:
-            json.dump(resources, f)
+        with open(self.resources_path, "w") as file:
+            json.dump(resources, file)
 
         privacy_policy_url = scraper.get_privacy_policy_url()
 
         scraper = WebScraper(privacy_policy_url)
         scraper.scrape()
         word_count = scraper.get_word_count()
-        with open(self.word_count_path, "w") as f:
-            json.dump(word_count, f)
+        with open(self.word_count_path, "w") as file:
+            json.dump(word_count, file)
 
 
 def main():
