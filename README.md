@@ -18,6 +18,7 @@ pip install -r requirements.txt
 To use the WebScraper app, follow these steps:
 
 Run the script:
+
 Copy code
 ```
 python app.py
