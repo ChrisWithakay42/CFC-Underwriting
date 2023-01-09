@@ -26,3 +26,7 @@ python app.py
 The script will scrape the index webpage hosted at "cfcunderwriting.com" and the "Privacy Policy" page.
 The list of externally loaded resources will be written to a JSON file called resources.json.
 The word frequency count will be written to a JSON file called word_count.json.
+
+### Note
+
+It is advisable to create a 
