@@ -12,7 +12,7 @@ cd CFC-Underwriting
 ```
 2. Install the required dependencies by running 
 ```
-pip install -r requirements.txt
+pip install -r requirements/test.in
 ```
 ## Usage
 To use the WebScraper app, follow these steps:
