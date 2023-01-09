@@ -7,7 +7,7 @@ To set up the WebScraper app, follow these steps:
 1. Clone the repository and navigate to the root directory:
 Copy code
 ```
-git clone https://github.com/<your-username>/WebScraper.git
+git clone git@github.com:ChrisWithakay42/CFC-Underwriting.git
 cd CFC-Underwriting
 ```
 2. Install the required dependencies by running 
