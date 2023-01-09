@@ -28,5 +28,3 @@ The list of externally loaded resources will be written to a JSON file called re
 The word frequency count will be written to a JSON file called word_count.json.
 
 ### Note
-
-It is advisable to create a 
